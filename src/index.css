@@ -1,0 +1,370 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+	font-family: 'Satoshi';
+	src: url('assets/fonts/Satoshi-Black.woff2') format('woff2'),
+		url('assets/fonts/Satoshi-Black.woff2') format('woff'),
+		url('assets/fonts/Satoshi-Black.woff2') format('embedded-opentype');
+	font-weight: 900;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Satoshi';
+	src: url('assets/fonts/Satoshi-Bold.woff2') format('woff2'),
+		url('assets/fonts/Satoshi-Bold.woff2') format('woff'),
+		url('assets/fonts/Satoshi-Bold.woff2') format('embedded-opentype');
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Satoshi';
+	src: url('assets/fonts/Satoshi-Medium.woff2') format('woff2'),
+		url('assets/fonts/Satoshi-Medium.woff2') format('woff'),
+		url('assets/fonts/Satoshi-Medium.woff2') format('embedded-opentype');
+	font-weight: 500;
+	font-style: normal;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+	line-height: 1.5;
+	font-weight: 400;
+
+	color-scheme: light dark;
+	color: rgba(255, 255, 255, 0.87);
+	background-color: #242424;
+
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+a {
+	font-weight: 500;
+	color: #646cff;
+	text-decoration: inherit;
+}
+
+body {
+	min-width: 360px;
+	max-width: 450px;
+	margin: 0 auto;
+	font-family: 'Satoshi', sans-serif;
+	position: relative;
+}
+
+h1 {
+	font-size: 3.2em;
+	line-height: 1.1;
+}
+
+#root {
+	max-width: 1280px;
+	margin: 0 auto;
+}
+
+:root {
+	--black: #222222;
+	--gray: #2a2a2a;
+	--gray-lite: #999;
+	--orange: #F0A742;
+	--red: #F43434;
+	--green: #97f06d;
+	--green-border: rgba(151, 240, 109, 0.5);
+	--text-gray: #999;
+	--blue: #6DD8F0;
+
+	--border-black:  rgba(255, 255, 255, 0.05);
+	--border-green:  rgba(151, 240, 109, 0.50);
+}
+
+@layer base {
+	:root {
+		--radius: 0.5rem;
+	}
+}
+
+.app-wrapper {
+	min-height: 100vh;
+}
+
+
+.navigation {
+	position: fixed;
+	bottom: 3px;
+	left: 0;
+	right: 0;
+	z-index: 10;
+}
+
+
+.tab-balance-green {
+	border-radius: 8px;
+	background: radial-gradient(50% 50% at 50% 50%,
+			rgba(0, 0, 0, 0) 0%,
+			rgba(40, 236, 17, 0.1) 55.72%,
+			rgba(40, 236, 17, 0.25) 100%);
+	padding: 4px;
+	backdrop-filter: blur(4px);
+}
+
+.menu-item {
+	display: flex;
+	align-items: flex-start;
+	padding: 12px 16px 8px 16px;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 4px;
+	border-radius: 12px;
+	border: 1px solid rgba(255, 255, 255, 0.05);
+	background: var(--gray);
+	flex: 1;
+}
+
+.token-table>p {
+	padding: 8px 12px;
+}
+
+.token-table-nav-active {
+	border-radius: 24px;
+	border: 1px solid rgba(255, 255, 255, 0.05);
+
+	background: #2a2a2a;
+}
+
+.overlay {
+	background: rgba(0, 0, 0, 0.4);
+
+	backdrop-filter: blur(12px);
+}
+
+.crypto-header-main {
+	border-radius: 32px;
+	border: 1px solid rgba(255, 255, 255, 0.05);
+	background: #2a2a2a;
+	font-size: 16px;
+	font-weight: 500;
+}
+
+.crypto-header-item {
+	border-radius: 32px;
+	border: 1px solid rgba(255, 255, 255, 0.05);
+	background: #2a2a2a;
+	font-size: 16px;
+	font-weight: 500;
+}
+
+.crypto-header-item:hover {
+	border: 1px solid rgba(151, 240, 109, 0.5);
+}
+
+.crypto-wallet-active {
+	border-radius: 32px;
+	border: 1px solid rgba(255, 255, 255, 0.05);
+	background: #3b3c40;
+	position: relative;
+	z-index: 70;
+}
+
+.crypto-wallet-item {
+	padding: 16px;
+	border-radius: 24px;
+	border: 1px solid rgba(255, 255, 255, 0.05);
+	background: #2a2a2a;
+	font-size: 16px;
+	font-weight: 500;
+}
+
+.crypto-wallet-item:hover {
+	border: 1px solid rgba(151, 240, 109, 0.5);
+}
+
+.wallet-edit-text {
+	font-size: 16px;
+	font-weight: 900;
+}
+
+.wallet-edit-shadow-text {
+	font-size: 16px;
+	font-weight: 500;
+	opacity: 0.5;
+}
+
+.wallet-create-btn {
+	width: 100%;
+	padding: 16px;
+	border-radius: 24px;
+	border: 1px solid rgba(255, 255, 255, 0.05);
+	background: #2a2a2a;
+}
+
+
+/* Компоненты nav Profiles */
+.drawer-block {
+	border-radius: 12px;
+	border: 1px solid rgba(255, 255, 255, 0.05);
+	background: #2A2A2A;
+	font-size: 16px;
+	font-weight: 500;
+}
+
+.title-drawer {
+	color: #FFF;
+	font-size: 24px;
+	font-weight: 900;
+}
+
+.profile-list-item {
+	color: #666666;
+	width: 100%;
+	padding: 8px;
+	text-align: center;
+	font-size: 16px;
+	font-weight: 500;
+}
+
+.profile-list-item-active {
+	text-align: center;
+	padding: 8px;
+	border-radius: 12px;
+	border: 1px solid rgba(255, 255, 255, 0.05);
+	background: #2A2A2A;
+}
+
+.profile-span {
+	font-size: 13px;
+	font-weight: 500;
+	color: #949494;
+}
+
+.profile-span-active {
+	border-radius: 7px;
+	border: 0.5px solid rgba(0, 0, 0, 0.04);
+	background: #3B3C40;
+	box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.12), 0px 3px 1px 0px rgba(0, 0, 0, 0.04);
+	color: #97F06D;
+	text-align: center;
+	font-size: 13px;
+	font-weight: 500;
+}
+
+/* Tools */
+.tools-main-block {
+	width: 100%;
+	padding: 16px;
+	border-radius: 20px;
+	border: 1px solid rgba(255, 255, 255, 0.05);
+	background: #2A2A2A;
+}
+
+.tools-main-block-title {
+	color: #FFF;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 900;
+}
+
+.tools-main-block-desc {
+	opacity: 0.5;
+	font-size: 12px;
+	font-weight: 500;
+}
+
+.tools-main-block-item {
+	border-radius: 12px;
+	background: #222;
+	align-items: center;
+	padding: 8px;
+}
+
+.tools-quick-buy {
+	border-radius: 12px;
+	background: #222;
+	align-items: center;
+	padding: 12px;
+}
+
+.research-main-block-item {
+	border-radius: 16px;
+	background: #2A2A2A;
+	padding: 12px;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	align-items: center;
+	width: 100%;
+}
+
+.research-header-right-number {
+	padding: 4px 8px;
+	border: 1px solid #F8DF79;
+	border-radius: 8px;
+	background: #222;
+	color: #F8DF79;
+
+}
+
+.research-header-right-new {
+	padding: 4px 8px;
+	border: 1px solid #97F06D;
+	border-radius: 8px;
+	background: #222;
+	color: #97F06D;
+}
+
+.research-main-content-block {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	width: 100%;
+	font-size: 14px;
+
+
+}
+
+.research-main-content-first {
+	border-radius: 8px;
+	background: #222;
+	padding: 8px 12px;
+	flex: 1;
+}
+
+.research-main-content-third {
+	border-radius: 8px;
+	background: #222;
+	padding: 12px 14px;
+	flex: 1;
+}
+
+.research-main-btn {
+	padding: 12px 14px;
+	justify-content: center;
+	align-items: center;
+	border-radius: 20px;
+	background: #3B3C40;
+}
+
+.tariffs-free {
+	border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.tariffs-vip {
+	border: 1px solid rgba(151, 240, 109, 0.50);
+
+	box-shadow: 0px 4px 32px -16px rgba(151, 240, 109, 0.40);
+
+}
