@@ -14,7 +14,9 @@ export const Nav = () => {
 					to='/'
 					className={({ isActive }) =>
 						`px-4 py-2 flex-col flex items-center gap-0.5 rounded-[16px] ${
-							isActive ? 'text-[var(--green)] bg-[var(--black)]' : ''
+							isActive
+								? 'text-[var(--green)] bg-[var(--black)]'
+								: 'text-[#5A5A5A]'
 						}`
 					}
 				>
@@ -27,7 +29,9 @@ export const Nav = () => {
 					to='/research'
 					className={({ isActive }) =>
 						`px-4 py-2 flex-col flex items-center gap-0.5 rounded-[16px] ${
-							isActive ? 'text-[var(--green)] bg-[var(--black)]' : ''
+							isActive
+								? 'text-[var(--green)] bg-[var(--black)]'
+								: 'text-[#5A5A5A]'
 						}`
 					}
 				>
@@ -40,7 +44,9 @@ export const Nav = () => {
 					to='/tools'
 					className={({ isActive }) =>
 						`px-4 py-2 flex-col flex items-center gap-0.5 rounded-[16px] ${
-							isActive ? 'text-[var(--green)] bg-[var(--black)]' : ''
+							isActive
+								? 'text-[var(--green)] bg-[var(--black)]'
+								: 'text-[#5A5A5A]'
 						}`
 					}
 				>
@@ -53,7 +59,9 @@ export const Nav = () => {
 					to='/profile'
 					className={({ isActive }) =>
 						`px-4 py-2 flex-col flex items-center gap-0.5 rounded-[16px] ${
-							isActive ? 'text-[var(--green)] bg-[var(--black)]' : ''
+							isActive
+								? 'text-[var(--green)] bg-[var(--black)]'
+								: 'text-[#5A5A5A]'
 						}`
 					}
 				>
